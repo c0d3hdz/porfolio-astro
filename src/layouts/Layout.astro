@@ -20,7 +20,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<Navbar />
-			<slot />
+		<slot />
 	</body>
 </html>
 <style is:global>
@@ -43,6 +43,8 @@ const { title } = Astro.props;
 	body{
 		display: flex;
 		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 	}
 	code {
 		font-family:

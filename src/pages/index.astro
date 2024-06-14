@@ -39,10 +39,23 @@ import Card from '../components/Card.astro';
 			<div class="cicle-1"></div>
 			<div class="cicle-2"></div>
 		</div>
-
+	</div>
+	<div class="experiences">
+		<div class="line"></div>
+		<Card
+			title="Frontend Developer Experience"
+			body="Un año como frontend en pequeños proyectos. Trabajé en diversas aplicaciones web utilizando HTML, CSS y JavaScript."
+		/>
+		<Card
+			title="Frontend Courses"
+			body="He completado múltiples cursos de frontend, incluyendo cursos sobre HTML, CSS, JavaScript."
+		/>
+		<Card
+			title="Engineering Studies"
+			body="Actualmente estudiando una carrera en Ingeniería en Sistemas Computacionales. He adquirido una sólida base en programación, estructuras de datos y algoritmos."
+				/>
 	</div>
 </Layout>
-
 <style>
 	.card_present{
 		width: 60%;
@@ -125,6 +138,28 @@ import Card from '../components/Card.astro';
 					transform: rotate(-540deg);
 				}
 			}
+		}
+	}
+	.experiences{
+		margin-top: 40vh;
+		display: flex;
+		flex-direction: column;
+		height: 700px;
+		.line{
+			width: 1px;
+			background-color: rgb(var(--accent-light));
+			height: 700px;
+			position: absolute;
+		}
+		.line::before{
+			content: 'Experiencia';
+			font-size: xx-large;
+			color: rgb(var(--accent-light));
+			font-weight: 500;
+			letter-spacing: 2px;
+			position: relative;
+			top:-50px;
+			left: -5px;
 		}
 	}
 	@media (max-width: 1250px) {
