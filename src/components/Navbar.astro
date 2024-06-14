@@ -1,0 +1,104 @@
+---
+// components/Navbar.astro
+---
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a href="/" class="navbar-item">c0d3</a>
+        <div class="navbar-burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="navbar-menu" id="nav-links">
+        <a href="/" class="navbar-item">Home</a>
+        <a href="/projects" class="navbar-item">Projects</a>
+        <a href="/about" class="navbar-item">Educate</a>
+        <a href="/contact" class="navbar-item">Contact</a>
+    </div>
+</nav>
+
+<style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px rgb(var(--accent-dark)); ;
+        padding: 10px 20px;
+        position: absolute;
+        top: 0;
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-item {
+        color: #fff;
+        padding: 10px 15px;
+        text-decoration: none;
+    }
+
+    .navbar-item:hover {
+        background-color: rgb(var(--accent-light));
+        color: #000;
+    }
+
+    .navbar-burger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .navbar-burger span {
+        background-color: #fff;
+        border-radius: 2px;
+        display: block;
+        height: 2px;
+        margin: 4px 0;
+        width: 25px;
+    }
+
+    .navbar-menu {
+        display: flex;
+        gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .navbar{
+            left: 0;
+            z-index: 10000;
+        }
+        .navbar-burger {
+            display: flex;
+        }
+
+        .navbar-menu {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            background-color: rgb(var(--accent-dark));
+            position: absolute;
+            top: 50px;
+            left: 0;
+            padding: 10px 0;
+        }
+
+        .navbar-menu.active {
+            display: flex;
+        }
+
+        .navbar-item {
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
+
+<script>
+    document.getElementById('burger').addEventListener('click', () => {
+        document.getElementById('nav-links').classList.toggle('active');
+    });
+</script>
