@@ -42,15 +42,15 @@ import Card from '../components/Card.astro';
 	</div>
 	<div class="experiences">
 		<div class="line"></div>
-		<Card
+		<Card client:load 
 			title="Frontend Developer Experience"
 			body="Un año como frontend en pequeños proyectos. Trabajé en diversas aplicaciones web utilizando HTML, CSS y JavaScript."
 		/>
-		<Card
+		<Card client:load
 			title="Frontend Courses"
 			body="He completado múltiples cursos de frontend, incluyendo cursos sobre HTML, CSS, JavaScript."
 		/>
-		<Card
+		<Card client:load
 			title="Engineering Studies"
 			body="Actualmente estudiando una carrera en Ingeniería en Sistemas Computacionales. He adquirido una sólida base en programación, estructuras de datos y algoritmos."
 				/>
@@ -147,7 +147,7 @@ import Card from '../components/Card.astro';
 		height: 700px;
 		.line{
 			width: 1px;
-			background-color: rgb(var(--accent-light));
+			background-color:rgba(255, 255, 255, 0.192);
 			height: 700px;
 			position: absolute;
 		}
