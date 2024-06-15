@@ -19,7 +19,9 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<Navbar />
-		<slot />
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>
 <style is:global>
@@ -39,7 +41,7 @@ const { title } = Astro.props;
 		background: #13151a;
 		background-size: 224px;
 	}
-	body{
+	main{
 		display: flex;
 		justify-content: center;
 		align-items: center;
