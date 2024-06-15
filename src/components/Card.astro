@@ -84,8 +84,8 @@ const {  title, body } = Astro.props;
 	}
 </style>
 <script>
-		function isInView(element) {
-			const rect = element.getBoundingClientRect();
+		function isInView(cards) {
+			const rect = cards.getBoundingClientRect();
 			return (
 				rect.top >= 0 &&
 				rect.left >= 0 &&
