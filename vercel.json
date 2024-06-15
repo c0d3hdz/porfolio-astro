@@ -1,14 +1,5 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "package.json",
-            "use": "@vercel/node"
-        }
-    ],
-    "build": {
-        "env": {
-            "NODE_VERSION": "20.12.2"
-        }
-    }
+    "builds": [{ "src": "public/**/*", "use": "@vercel/static" }],
+    "routes": [{ "src": "/(.*)", "dest": "/public/$1" }]
 }
