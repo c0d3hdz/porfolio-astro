@@ -1,17 +1,14 @@
 ---
-
+import Lenguage from '../components/lenguage/tangs_Lenguage.astro'
 ---
 <div id="Proyectos" class="Content_proyects">
     <div class="Proyect">
+        <img src="/img/Proyects/P_1.png" alt="CBTIS_fichas">
         <div class="Content_info">
-            <span>LOREM</span>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore, dolore!</p>
-        </div>
-    </div>
-    <div class="Proyect">
-        <div class="Content_info">
-            <span>LOREM</span>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore, dolore!</p>
+            <span>Fichas CBTis 86</span>
+            <Lenguage></Lenguage>
+            <p>En el proyecto de registro de aspirantes a una preparatoria, desempeñé un papel integral como desarrollador 
+                Full Stack. Mi enfoque principal se centró en el desarrollo y refinamiento del frontend.</p>
         </div>
     </div>
 </div>
@@ -33,27 +30,54 @@
     overflow: hidden;
 }
 .Content_proyects > .Proyect > .Content_info{
+    position: relative;
+    top: -101%;
     width: 100%;
     height: 100%;
-    color: #ffff;
-    background-color: rgba(243, 186, 255, 0.32);
+    color: #000000;
+    background-image: var(--accent-gradient);
     opacity: 0;
     transition: all 0.5s ease-in-out;
     overflow: hidden;
     text-wrap: wrap;
     padding:50px;
     box-sizing: border-box;
+    z-index: 5;
     &:hover{
         opacity: 1;
+        color: rgb(var(--accent-dark));
     }
+}
+.Content_info > span{
+    position: relative;
+    top: -40px;
+    left: -30px;
+    font-size: xx-large;
+    font-weight: 500;
+}
+.Content_info > p {
+    text-wrap: wrap;
+}
+.Proyect > img{
+    position: relative;
+    pointer-events: none;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
 }
 @media (max-width: 750px) {
     .Content_proyects{
         width: 100%;
     }
     .Content_proyects > .Proyect{
-        width: 100%;
+        width: 90%;
+        height: 250px;
     }
+    .Content_info > p {
+    position: relative;
+    top: -50px;
+    text-wrap: wrap;
+    }   
 }   
 
 </style>
