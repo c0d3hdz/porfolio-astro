@@ -1,21 +1,30 @@
 ---
-import Lenguage from '../components/lenguage/tangs_Lenguage.astro'
+import Lenguage_Fichas from './lenguage/tags_Lenguage_Fichas.astro'
+import Lenguage_Clima from './lenguage/tags_Lenguage_Clima.astro'
 ---
 <div id="Proyectos" class="Content_proyects">
     <div class="Proyect">
         <img src="/img/Proyects/P_1.png" alt="CBTIS_fichas">
         <div class="Content_info">
             <span>Fichas CBTis 86</span>
-            <Lenguage></Lenguage>
+            <Lenguage_Fichas/>
             <p>En el proyecto de registro de aspirantes a una preparatoria, desempeñé un papel integral como desarrollador 
                 Full Stack. Mi enfoque principal se centró en el desarrollo y refinamiento del frontend.</p>
+        </div>
+    </div>
+    <div class="Proyect">
+        <img src="/img/Proyects/P_2.png" alt="Clima_react">
+        <div class="Content_info">
+            <span>App del Clima</span>
+            <Lenguage_Clima/>
+            <p>Esta es una aplicación del clima desarrollada con React. Permite a los usuarios obtener información meteorológica actualizada para una ciudad especificada.</p>
         </div>
     </div>
 </div>
 
 <style>
 .Content_proyects{
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,6 +36,7 @@ import Lenguage from '../components/lenguage/tangs_Lenguage.astro'
 .Content_proyects> .Proyect{
     width: 550px;
     height: 320px;
+    background-color: rgb(var(--accent-dark), 0.11);
     border: solid 1px #ffffff10;
     border-radius: 5px;
     justify-content: center;
@@ -36,10 +46,10 @@ import Lenguage from '../components/lenguage/tangs_Lenguage.astro'
 .Content_proyects > .Proyect > .Content_info{
     position: relative;
     top: -101%;
-    width: 90%;
+    width: 100%;
     height: 100%;
     color: #000000;
-    background-image: var(--accent-gradient);
+    background-image: var(--accent-gradient-2);
     opacity: 0;
     transition: all 0.5s ease-in-out;
     overflow: hidden;
@@ -47,6 +57,8 @@ import Lenguage from '../components/lenguage/tangs_Lenguage.astro'
     padding:50px;
     box-sizing: border-box;
     z-index: 5;
+    display: flex;
+    flex-direction: column;
     &:hover{
         opacity: 0.9;
         color: rgb(var(--accent-dark));
@@ -54,7 +66,7 @@ import Lenguage from '../components/lenguage/tangs_Lenguage.astro'
 }
 .Content_info > span{
     position: relative;
-    top: -40px;
+    top:-50px;
     left: -30px;
     font-size: xx-large;
     font-weight: 500;
@@ -63,13 +75,21 @@ import Lenguage from '../components/lenguage/tangs_Lenguage.astro'
     text-wrap: wrap;
 }
 .Proyect > img{
-    position: relative;
     pointer-events: none;
     z-index: -2;
     width: 100%;
     height: 100%;
 }
-@media (max-width: 750px) {
+
+@media (max-width: 450px) {
+    
+    .Content_info > span{
+        position: relative;
+        top:-50px;
+        left: -30px;
+        font-size: large;
+        font-weight: 500;
+    }
     .Content_proyects{
         width: 100%;
         justify-content: center;
@@ -87,5 +107,4 @@ import Lenguage from '../components/lenguage/tangs_Lenguage.astro'
     font-size: 14px;
     }   
 }   
-
 </style>

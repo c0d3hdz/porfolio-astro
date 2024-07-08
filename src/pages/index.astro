@@ -4,6 +4,7 @@ import Cards from '../components/Cards.astro';
 import Tecno from '../components/tecno.astro';
 import User from '../components/image-user.astro';
 import Proyects from '../components/Proyects.astro'
+import Footer from '../components/footer.astro';
 ---
 <Layout title='c0d3'>
 	<div class="card_present">
@@ -22,7 +23,11 @@ import Proyects from '../components/Proyects.astro'
 		<div class="line" id="Experiencias"></div>
 		<Cards />
 	</div>
-	<Proyects></Proyects>
+	<div>
+		<p class="title_Proyects">Proyectos</p>
+		<Proyects/>
+	</div>
+	<Footer></Footer>
 </Layout>
 <style>
 	.card_present{
@@ -130,6 +135,12 @@ import Proyects from '../components/Proyects.astro'
 			top:-50px;
 			left: -5px;
 		}
+	}
+	.title_Proyects{
+		font-size: xx-large;
+		color: rgb(var(--accent-light));
+		font-weight: 500;
+		letter-spacing: 2px;
 	}
 	@media (max-width: 1250px) {
 		.card_present{
