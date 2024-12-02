@@ -1,110 +1,118 @@
 ---
 import Lenguage_Fichas from './lenguage/tags_Lenguage_Fichas.astro'
 import Lenguage_Clima from './lenguage/tags_Lenguage_Clima.astro'
+import TagsLenguageEstimacion from './lenguage/tags_Lenguage_Estimacion.astro'
 ---
 <div id="Proyectos" class="Content_proyects">
-    <div class="Proyect">
-        <img src="/img/Proyects/P_1.png" alt="CBTIS_fichas">
-        <div class="Content_info">
-            <span>Fichas CBTis 86</span>
-            <Lenguage_Fichas/>
-            <p>En el proyecto de registro de aspirantes a una preparatoria, desempeñé un papel integral como desarrollador 
-                Full Stack. Mi enfoque principal se centró en el desarrollo y refinamiento del frontend.</p>
+    <div class="Personal_Proyects"> 
+        <h2>Proyectos Personales</h2>
+        <div class="Proyect">
+            <a href="">
+                <img src="/img/Proyects/P_1.png" alt="CBTIS_fichas">
+                <div class="Content_info">
+                    <span>Fichas CBTis 86</span>
+                    <Lenguage_Fichas/>
+                    <p>En el proyecto de registro de aspirantes a una preparatoria, desempeñé un papel integral como desarrollador 
+                        Full Stack. Mi enfoque principal se centró en el desarrollo y refinamiento del frontend.</p>
+                </div>
+            </a>
+        </div>
+        <div class="Proyect">
+            <a href="https://clima-c0d3.vercel.app/" target="_blank">
+                <img src="/img/Proyects/P_2.png" alt="Clima_react">
+                <div class="Content_info">
+                    <span>App del Clima</span>
+                    <Lenguage_Clima/>
+                    <p>Esta es una aplicación del clima desarrollada con React. Permite a los usuarios obtener información meteorológica actualizada para una ciudad especificada.</p>
+                </div>
+            </a>
+        </div>
+        <div class="Proyect">
+            <a href="https://generador-propuestas.vercel.app" target="_blank">
+                <img src="/img/Proyects/P_3.png" alt="Clima_react">
+                <div class="Content_info">
+                    <span>Generador de Estimaciones</span>
+                    <TagsLenguageEstimacion/>
+                    <p>Este proyecto es una aplicación web diseñada para ayudar a los profesionales de la construcción a generar estimaciones de costos de manera eficiente. La aplicación permite a los usuarios ingresar materiales y mano de obra necesarios para un proyecto, calcular el costo total y generar una estimación detallada en formato PDF.</p>
+                </div>
+            </a>
         </div>
     </div>
-    <div class="Proyect">
-        <img src="/img/Proyects/P_2.png" alt="Clima_react">
-        <div class="Content_info">
-            <span>App del Clima</span>
-            <Lenguage_Clima/>
-            <p>Esta es una aplicación del clima desarrollada con React. Permite a los usuarios obtener información meteorológica actualizada para una ciudad especificada.</p>
-        </div>
+    <div class="Escolar_Proyect">
+        <h2>Proyectos Escolares</h2>
     </div>
 </div>
 
 <style>
-.Content_proyects{
-    width: 100%;
+    .Personal_Proyects , .Escolar_Proyect{
+    width: 800px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap:15px;
-    margin-bottom: 10px;
-    overflow: hidden;
-}
-.Content_proyects> .Proyect{
-    width: 550px;
-    height: 320px;
-    background-color: rgb(var(--accent-dark), 0.11);
-    border: solid 1px #ffffff10;
-    border-radius: 5px;
-    justify-content: center;
-    padding: 20px;
-    margin: 0;
-}
-.Content_proyects > .Proyect > .Content_info{
-    position: relative;
-    top: -101%;
-    width: 100%;
-    height: 100%;
-    color: #000000;
-    background-image: var(--accent-gradient-2);
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-    overflow: hidden;
-    text-wrap: wrap;
-    padding:50px;
-    box-sizing: border-box;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    &:hover{
-        opacity: 0.9;
-        color: rgb(var(--accent-dark));
+        h2{
+            background-image: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 85%, rgb(255, 255, 255) 20%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
     }
-}
-.Content_info > span{
-    position: relative;
-    top:-50px;
-    left: -30px;
-    font-size: xx-large;
-    font-weight: 500;
-}
-.Content_info > p {
-    text-wrap: wrap;
-}
-.Proyect > img{
-    pointer-events: none;
-    z-index: -2;
-    width: 100%;
-    height: 100%;
-}
-
-@media (max-width: 450px) {
-    
-    .Content_info > span{
-        position: relative;
-        top:-50px;
-        left: -30px;
-        font-size: large;
-        font-weight: 500;
-    }
-    .Content_proyects{
+    a{
+        text-decoration: none;
         width: 100%;
-        justify-content: center;
-        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
     }
-    .Content_proyects > .Proyect{
-        width: 100%;
-        height: 250px;
-        padding: 20px 0px;
+    .Proyect{
+        img{
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .Content_info{
+            width: calc(100% - 300px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            span{
+                font-size: 1.5em;
+                color: rgb(var(--accent-light));
+            }
+            p{
+                color: rgb(var(--accent-light));
+                font-size: 1.2em;
+            }
+        }
     }
-    .Content_info > p {
-    position: relative;
-    top: -50px;
-    text-wrap: wrap;
-    font-size: 14px;
-    }   
-}   
+    @media screen and (max-width: 800px){
+        .Personal_Proyects , .Escolar_Proyect{
+            width: 100%;
+        }
+        a{
+            flex-direction: column;
+            gap: 15px;
+        }
+        .Proyect{
+            img{
+                width: 100%;
+                height: 300px;
+            }
+            .Content_info{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                border-bottom: solid #ffffff66 1px; 
+            }
+        }
+        
+    }
 </style>
